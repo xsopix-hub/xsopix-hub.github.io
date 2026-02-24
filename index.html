@@ -3,47 +3,66 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Sopi App Download</title>
-
-<script>
-const APPLE_URL  = "https://xsopix-hub.github.io/";
-const GOOGLE_URL = "https://xsopix-hub.github.io/";
-
-function isIOS() {
-  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-}
-
-function isAndroid() {
-  return /Android/i.test(navigator.userAgent);
-}
-
-window.onload = function() {
-  if (isIOS()) {
-    window.location.href = APPLE_URL;
-  } else if (isAndroid()) {
-    window.location.href = GOOGLE_URL;
-  } else {
-    document.getElementById("manual").style.display = "grid";
-  }
-}
-</script>
+<title>XSopix App herunterladen</title>
 
 <style>
-body {font-family: Arial; text-align:center; padding:40px;}
-a {display:block; margin:15px; padding:15px; background:#000; color:#fff; text-decoration:none; border-radius:10px;}
+body{
+  font-family: Arial, sans-serif;
+  text-align:center;
+  padding:40px;
+  background:#f5f5f5;
+}
+
+h1{
+  margin-bottom:10px;
+}
+
+p{
+  margin-bottom:30px;
+  color:#555;
+}
+
+.button{
+  display:block;
+  margin:15px auto;
+  padding:15px;
+  width:260px;
+  background:#000;
+  color:#fff;
+  text-decoration:none;
+  border-radius:10px;
+  font-size:16px;
+}
+
+.footer{
+  margin-top:40px;
+  font-size:14px;
+}
+.footer a{
+  color:#000;
+  text-decoration:none;
+  margin:0 10px;
+}
 </style>
 </head>
+
 <body>
-  <h1>XSopix App herunterladen</h1>
-  <p>Falls keine automatische Weiterleitung erfolgt:</p>
 
-  <div id="manual" style="display:grid;">
-  <a href="https://xsopix-hub.github.io/">🍎 Apple App Store</a>
-  <a href="https://xsopix-hub.github.io/">🤖 Google Play Store</a>
+<h1>XSopix App herunterladen</h1>
+<p>Bitte wähle deinen App Store:</p>
 
-  <div style="margin-top:30px;">
-    <a href="/impressum.html">Impressum</a> 
-    <a href="/datenschutz.html">Datenschutz</a>
-  </div>
+<a class="button" href="https://xsopix-hub.github.io/">
+🍎 Apple App Store
+</a>
+
+<a class="button" href="https://xsopix-hub.github.io/">
+🤖 Google Play Store
+</a>
+
+<div class="footer">
+  <a href="/impressum.html">Impressum</a> |
+  <a href="/datenschutz.html">Datenschutz</a>
+</div>
+
 </body>
 </html>
