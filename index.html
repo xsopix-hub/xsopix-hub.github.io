@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>XSopix App Download</title>
+
+<script>
+const APPLE_URL  = "https://example.com/ios";
+const GOOGLE_URL = "https://example.com/android";
+
+function isIOS() {
+  return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+}
+
+function isAndroid() {
+  return /Android/i.test(navigator.userAgent);
+}
+
+window.onload = function() {
+  if (isIOS()) {
+    window.location.href = APPLE_URL;
+  } else if (isAndroid()) {
+    window.location.href = GOOGLE_URL;
+  } else {
+    document.getElementById("manual").style.display = "block";
+  }
+}
+</script>
+
+<style>
+body {font-family: Arial; text-align:center; padding:40px;}
+a {display:block; margin:15px; padding:15px; background:#000; color:#fff; text-decoration:none; border-radius:10px;}
+</style>
+</head>
+
+<body>
+<h1>XSopix App herunterladen</h1>
+<p>Falls keine automatische Weiterleitung erfolgt:</p>
+
+<div id="manual" style="display:none;">
+<a href="https://example.com/ios">🍎 Apple App Store</a>
+<a href="https://example.com/android">🤖 Google Play Store</a>
+</div>
+
+</body>
+</html>
