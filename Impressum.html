@@ -1,1 +1,79 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Impressum – XSopix</title>
 
+<style>
+:root{
+  --bg:#0b1220;
+  --card:rgba(255,255,255,.08);
+  --text:rgba(255,255,255,.92);
+  --muted:rgba(255,255,255,.68);
+  --border:rgba(255,255,255,.12);
+  --radius:18px;
+}
+@media (prefers-color-scheme: light){
+  :root{
+    --bg:#f6f7fb;
+    --card:rgba(0,0,0,.04);
+    --text:rgba(0,0,0,.88);
+    --muted:rgba(0,0,0,.56);
+    --border:rgba(0,0,0,.10);
+  }
+}
+body{
+  margin:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
+  background:var(--bg);
+  color:var(--text);
+  padding:40px 20px;
+}
+.card{
+  max-width:800px;
+  margin:auto;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  padding:30px;
+}
+h1{margin-top:0}
+p{color:var(--muted);line-height:1.6}
+a{color:var(--muted);text-decoration:none}
+.footer{
+  margin-top:40px;
+  font-size:14px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+<div class="card">
+<h1>Impressum</h1>
+
+<p><strong>Angaben gemäß § 5 ECG</strong></p>
+
+<p>
+Vorname Nachname<br>
+Straße + Hausnummer<br>
+PLZ Ort<br>
+Österreich
+</p>
+
+<p>
+E-Mail: deine@email.at
+</p>
+
+<p>
+Diese Website dient ausschließlich als technische Weiterleitung zu App-Stores.
+</p>
+
+<div class="footer">
+<a href="/">← Zurück zur Startseite</a>
+</div>
+
+</div>
+</body>
+</html>
