@@ -6,63 +6,100 @@
 <title>XSopix App herunterladen</title>
 
 <style>
-body{
-  font-family: Arial, sans-serif;
-  text-align:center;
-  padding:40px;
-  background:#f5f5f5;
-}
+  body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    padding:40px;
+    background:#f5f5f5;
+  }
+  h1{ margin-bottom:10px; }
+  p{ margin-bottom:18px; color:#555; }
 
-h1{
-  margin-bottom:10px;
-}
+  .button{
+    display:block;
+    margin:15px auto;
+    padding:15px;
+    width:280px;
+    background:#000;
+    color:#fff;
+    text-decoration:none;
+    border-radius:12px;
+    font-size:16px;
+  }
 
-p{
-  margin-bottom:30px;
-  color:#555;
-}
+  .status{
+    margin: 12px auto 22px;
+    padding: 10px 12px;
+    width: 320px;
+    max-width: 100%;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    color:#333;
+    font-size:14px;
+  }
 
-.button{
-  display:block;
-  margin:15px auto;
-  padding:15px;
-  width:260px;
-  background:#000;
-  color:#fff;
-  text-decoration:none;
-  border-radius:10px;
-  font-size:16px;
-}
-
-.footer{
-  margin-top:40px;
-  font-size:14px;
-}
-.footer a{
-  color:#000;
-  text-decoration:none;
-  margin:0 10px;
-}
+  .footer{
+    margin-top:40px;
+    font-size:14px;
+  }
+  .footer a{
+    color:#000;
+    text-decoration:none;
+    margin:0 10px;
+  }
 </style>
+
+<script>
+  // ✅ HIER später deine echten Store-Links eintragen:
+  const APPLE_URL  = "https://xsopix-hub.github.io/"; // später: https://apps.apple.com/.../id....
+  const GOOGLE_URL = "https://xsopix-hub.github.io/"; // später: https://play.google.com/store/apps/details?id=...
+
+  function isIOS() {
+    return /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+  }
+  function isAndroid() {
+    return /Android/i.test(navigator.userAgent);
+  }
+
+  window.addEventListener("load", () => {
+    const status = document.getElementById("status");
+
+    // Falls Links noch Platzhalter sind: nicht automatisch weiterleiten
+    const placeholder = APPLE_URL.includes("xsopix-hub.github.io") && GOOGLE_URL.includes("xsopix-hub.github.io");
+
+    if (isIOS() && !placeholder) {
+      status.textContent = "iOS erkannt – Weiterleitung zum Apple App Store…";
+      setTimeout(() => window.location.replace(APPLE_URL), 600);
+    } else if (isAndroid() && !placeholder) {
+      status.textContent = "Android erkannt – Weiterleitung zu Google Play…";
+      setTimeout(() => window.location.replace(GOOGLE_URL), 600);
+    } else {
+      status.textContent = "Bitte wähle deinen Store (oder Links sind noch nicht gesetzt).";
+    }
+  });
+</script>
 </head>
 
 <body>
-
 <h1>XSopix App herunterladen</h1>
-<p>Bitte wähle deinen App Store:</p>
+<p>Wenn möglich, wirst du automatisch weitergeleitet.</p>
 
-<a class="button" href="https://xsopix-hub.github.io/">
-🍎 Apple App Store
-</a>
+<div class="status" id="status">Erkennung läuft…</div>
 
-<a class="button" href="https://xsopix-hub.github.io/">
-🤖 Google Play Store
-</a>
+<a class="button" id="appleBtn" href="https://apps.apple.com/">🍎 Apple App Store</a>
+<a class="button" id="googleBtn" href="https://play.google.com/">🤖 Google Play Store</a>
 
 <div class="footer">
   <a href="/impressum.html">Impressum</a> |
   <a href="/datenschutz.html">Datenschutz</a>
 </div>
+
+<script>
+  // Buttons passend zu deinen Links setzen
+  document.getElementById("appleBtn").href  = APPLE_URL;
+  document.getElementById("googleBtn").href = GOOGLE_URL;
+</script>
 
 </body>
 </html>
