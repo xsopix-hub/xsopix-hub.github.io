@@ -1,90 +1,198 @@
-
 <!doctype html>
 <html lang="de">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>datenschutz – </title>
-
-<style>
-:root{
-  --bg:#0b1220;
-  --card:rgba(255,255,255,.08);
-  --text:rgba(255,255,255,.92);
-  --muted:rgba(255,255,255,.68);
-  --border:rgba(255,255,255,.12);
-  --radius:18px;
-}
-@media (prefers-color-scheme: light){
-  :root{
-    --bg:#f6f7fb;
-    --card:rgba(0,0,0,.04);
-    --text:rgba(0,0,0,.88);
-    --muted:rgba(0,0,0,.56);
-    --border:rgba(0,0,0,.10);
-  }
-}
-body{
-  margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;
-  background:var(--bg);
-  color:var(--text);
-  padding:40px 20px;
-}
-.card{
-  max-width:800px;
-  margin:auto;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:30px;
-}
-h1{margin-top:0}
-h2{margin-top:25px}
-p{color:var(--muted);line-height:1.6}
-a{color:var(--muted);text-decoration:none}
-.footer{
-  margin-top:40px;
-  font-size:14px;
-  color:var(--muted);
-}
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Datenschutzerklärung – AusgstecktKalender</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --card:rgba(255,255,255,.08);
+      --text:rgba(255,255,255,.92);
+      --muted:rgba(255,255,255,.68);
+      --border:rgba(255,255,255,.12);
+      --radius:18px;
+      --max:900px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f6f7fb;
+        --card:rgba(0,0,0,.04);
+        --text:rgba(0,0,0,.88);
+        --muted:rgba(0,0,0,.62);
+        --border:rgba(0,0,0,.10);
+      }
+    }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.55;
+    }
+    header{
+      padding:28px 16px 10px;
+    }
+    .wrap{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:0 16px 40px;
+    }
+    .card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:18px 18px;
+      margin:12px 0;
+      backdrop-filter: blur(8px);
+    }
+    h1{font-size:1.7rem; margin:0 0 8px;}
+    h2{font-size:1.15rem; margin:18px 0 8px;}
+    p{margin:8px 0;}
+    ul{margin:8px 0 8px 18px;}
+    code{background:rgba(127,127,127,.18); padding:2px 6px; border-radius:10px;}
+    a{color:inherit; text-decoration:underline; text-underline-offset:3px;}
+    .muted{color:var(--muted); font-size:.95rem;}
+    footer{padding:10px 0 0;}
+  </style>
 </head>
 
 <body>
-<div class="card">
-<h1>Datenschutzerklärung</h1>
+  <header class="wrap">
+    <h1>Datenschutzerklärung</h1>
+    <p class="muted">für die App <strong>AusgstecktKalender</strong> – Stand: <span id="date"></span></p>
+  </header>
 
-<h2>Allgemeine Hinweise</h2>
-<p>
-Diese Website dient ausschließlich der Weiterleitung zu externen App-Stores.
-Es werden keine personenbezogenen Daten aktiv erhoben oder gespeichert.
-</p>
+  <main class="wrap">
+    <section class="card">
+      <h2>1. Verantwortlicher</h2>
+      <p>
+        Verantwortlich für die Datenverarbeitung im Sinne der DSGVO:
+      </p>
+      <p>
+        <strong>Thomas Soupal</strong><br />
+        E-Mail: <a href="mailto:[DEINE E-MAIL]">ausgstecktkaleder@gmail.com</a>
+      </p>
+    </section>
 
-<h2>Hosting</h2>
-<p>
-Die Website wird über GitHub Pages bereitgestellt.
-Beim Aufruf der Website können technisch notwendige Server-Logdaten verarbeitet werden.
-Auf diese Daten habe ich keinen direkten Zugriff.
-</p>
+    <section class="card">
+      <h2>2. Welche Daten verarbeitet die App?</h2>
+      <p>Je nach Nutzung der App können folgende Daten verarbeitet werden:</p>
+      <ul>
+        <li>Vom Nutzer eingegebene Inhalte (z. B. Notizen, Einträge, Texte, Einstellungen)</li>
+        <li>Technische Daten, die für den Betrieb erforderlich sind (z. B. Zeitstempel, interne IDs)</li>
+        <li>Bilder/Medien, sofern Sie diese innerhalb der App aufnehmen oder auswählen</li>
+      </ul>
+      <p class="muted">
+        Hinweis: Bitte tragen Sie hier ein, <em>welche Inhalte</em> eure App konkret speichert (z. B. Termine, Aufgaben, Fotos…).
+      </p>
+    </section>
 
-<h2>Externe Links</h2>
-<p>
-Beim Weiterleiten zu Apple App Store oder Google Play Store gelten die
-Datenschutzbestimmungen der jeweiligen Anbieter.
-</p>
+    <section class="card">
+      <h2>3. Nutzung der Kamera (Berechtigung: <code>android.permission.CAMERA</code>)</h2>
+      <p>
+        Die App kann Zugriff auf die Kamera benötigen, um Funktionen innerhalb der App bereitzustellen
+        (z. B. Foto aufnehmen, Dokument/QR erfassen, Profilbild erstellen).
+      </p>
+      <p>
+        Aufgenommene Inhalte werden nur verarbeitet, wenn Sie die Funktion aktiv nutzen. Je nach Funktion
+        können Inhalte lokal auf dem Gerät und/oder in der Datenbank gespeichert werden.
+      </p>
+    </section>
 
-<h2>Verantwortlicher</h2>
-<p>
-Thomas Soupal<br>
-Pallischgasse 16/4/12<br>
-2486 Pottendorf<br>
-Österreich<br>
-E-Mail: ausgstecktkalender@gmail.com
-</p>
+    <section class="card">
+      <h2>4. Supabase (Hosting, Datenbank & Authentifizierung)</h2>
+      <p>
+        Diese App nutzt <strong>Supabase</strong> als Backend-Dienst (z. B. Datenbank, API, Datei-/Speicherfunktionen und ggf. Login).
+        Dabei werden die von Ihnen eingegebenen Inhalte sowie technisch notwendige Informationen an Supabase übertragen und dort gespeichert.
+      </p>
+      <p>
+        Anbieter: <strong>Supabase, Inc.</strong>, San Francisco, USA.
+      </p>
+      <p>
+        Datenschutzhinweise von Supabase:
+        <a href="https://supabase.com/privacy" target="_blank" rel="noopener">https://supabase.com/privacy</a>
+      </p>
+      <p class="muted">
+        Falls du Supabase Auth nutzt: Es können z. B. E-Mail-Adresse, Benutzer-ID, Login-Zeitpunkte verarbeitet werden.
+      </p>
+    </section>
 
-<div class="footer">
-<a href="/">← Zurück zur Startseite</a>
-</div>
+    <section class="card">
+      <h2>5. Zweck der Verarbeitung</h2>
+      <p>Die Verarbeitung erfolgt insbesondere zu folgenden Zwecken:</p>
+      <ul>
+        <li>Bereitstellung der App-Funktionen</li>
+        <li>Speichern und Synchronisieren Ihrer Inhalte (über Supabase)</li>
+        <li>Fehlerbehebung und Sicherheit (z. B. Schutz vor Missbrauch)</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>6. Rechtsgrundlage</h2>
+      <p>
+        Die Verarbeitung erfolgt auf Basis von Art. 6 Abs. 1 lit. b DSGVO (Erfüllung eines Vertrags bzw. Bereitstellung der App)
+        und/oder Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an sicherem und funktionsfähigem Betrieb).
+      </p>
+      <p class="muted">
+        Wenn du Einwilligungen nutzt (z. B. für Kamera je nach Android), kannst du zusätzlich Art. 6 Abs. 1 lit. a DSGVO nennen.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>7. Speicherdauer</h2>
+      <p>
+        Daten werden nur so lange gespeichert, wie es für die Nutzung der App erforderlich ist oder bis Sie die Löschung verlangen,
+        sofern keine gesetzlichen Aufbewahrungspflichten bestehen.
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>8. Weitergabe an Dritte</h2>
+      <p>
+        Eine Weitergabe an Dritte erfolgt grundsätzlich nicht, außer soweit dies zur technischen Bereitstellung erforderlich ist
+        (z. B. an Supabase als Auftragsverarbeiter/technischer Dienstleister).
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>9. Ihre Rechte</h2>
+      <p>Sie haben nach DSGVO u. a. folgende Rechte:</p>
+      <ul>
+        <li>Auskunft über die verarbeiteten Daten</li>
+        <li>Berichtigung unrichtiger Daten</li>
+        <li>Löschung (soweit zulässig)</li>
+        <li>Einschränkung der Verarbeitung</li>
+        <li>Datenübertragbarkeit</li>
+        <li>Widerspruch gegen Verarbeitung (soweit anwendbar)</li>
+      </ul>
+      <p>
+        Zur Ausübung Ihrer Rechte genügt eine E-Mail an:
+        <a href="mailto:[DEINE E-MAIL]">ausgstecktkaleder@gmail.com</a>
+      </p>
+    </section>
+
+    <section class="card">
+      <h2>10. Datensicherheit</h2>
+      <p>
+        Wir treffen angemessene technische und organisatorische Maßnahmen, um Ihre Daten gegen Verlust,
+        unbefugten Zugriff oder Missbrauch zu schützen.
+      </p>
+    </section>
+
+    <footer class="wrap muted">
+      <p>
+        Hinweis: Diese Vorlage ersetzt keine Rechtsberatung. Für besondere Funktionen (Werbung/Analytics/Tracking/Payments)
+        muss die Datenschutzerklärung erweitert werden.
+      </p>
+    </footer>
+  </main>
+
+  <script>
+    const d = new Date();
+    const pad = (n) => String(n).padStart(2, "0");
+    document.getElementById("date").textContent =
+      `${pad(d.getDate())}.${pad(d.getMonth()+1)}.${d.getFullYear()}`;
+  </script>
 </body>
 </html>
