@@ -201,6 +201,20 @@
     const pad = (n) => String(n).padStart(2, "0");
     document.getElementById("date").textContent =
       `${pad(d.getDate())}.${pad(d.getMonth()+1)}.${d.getFullYear()}`;
-  </script>
+  <section class="card">
+  <h2>Push-Benachrichtigungen</h2>
+  <p>
+    Die App kann Push-Benachrichtigungen an Ihr Gerät senden, um Sie über wichtige Inhalte oder Ereignisse
+    innerhalb der App zu informieren.
+  </p>
+  <p>
+    Für den Versand von Push-Benachrichtigungen wird ein technischer Push-Dienst verwendet
+    (z. B. Firebase Cloud Messaging oder vergleichbarer Dienst).
+    Dabei wird eine gerätespezifische Push-ID (Token) verarbeitet, um Nachrichten an Ihr Gerät zustellen zu können.
+  </p>
+  <p>
+    Push-Benachrichtigungen können jederzeit in den Einstellungen Ihres Geräts deaktiviert werden.
+  </p>
+</section>
 </body>
 </html>
